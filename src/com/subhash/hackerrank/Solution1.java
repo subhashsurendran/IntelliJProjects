@@ -76,7 +76,59 @@ class Result {
         return (page<totalPages)? getPageTotalGoals(request, totalGoals, team,page+1):totalGoals;
     }
 
+    public static int getNumDraws(int year) throws IOException, ScriptException {
 
+        final String endpoint ="https://jsonmock.hackerrank.com/api/football_matches?year="+year;
+        final int maxScore =10;
+
+        int totalNumDraws =0;
+
+        for(int score =0; score<=maxScore; score++){
+            totalNumDraws+=getTotalNumDraws(String.format(endpoint + "&team1goals=%d&team2goals=%d", score, score));
+            
+        }
+        return totalNumDraws;
+
+    }
+
+    private static int getTotalNumDraws(String request) throws IOException, ScriptException {
+
+        URL url = new URL(request);
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setRequestMethod("GET");
+        httpURLConnection.addRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setConnectTimeout(5000);
+        httpURLConnection.setReadTimeout(5000);
+
+        int status = httpURLConnection.getResponseCode();
+
+        InputStream inputStream = (status < 200 || status > 299) ? httpURLConnection.getErrorStream() : httpURLConnection.getInputStream();
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+        String readline;
+        StringBuffer response = new StringBuffer();
+
+        while((readline=br.readLine())!=null){
+                response.append(readline);
+        }
+        br.close();
+        httpURLConnection.disconnect();
+
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("javascript");
+
+        String script="var obj - JSON.parse('"+response.toString()+"');";
+        script+="var total = obj.total;";
+
+        engine.eval(script);
+
+        if(engine.get("total")==null){
+            throw new RuntimeException();
+
+        }
+
+        return (int)engine.get("total");
+    }
 }
 
 public class Solution1 {
