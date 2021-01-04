@@ -23,7 +23,7 @@ public class Superman {
         return superman;
     }
 
-    private Object readResolve() throws ObjectStreamException {
+    private Object readResolve() {
         return superman;
     }
 }
