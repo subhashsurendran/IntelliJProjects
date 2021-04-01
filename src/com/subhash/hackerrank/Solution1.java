@@ -91,6 +91,11 @@ class Result {
 
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     private static int getTotalNumDraws(String request) throws IOException, ScriptException {
 
         URL url = new URL(request);
@@ -101,6 +106,9 @@ class Result {
         httpURLConnection.setReadTimeout(5000);
 
         int status = httpURLConnection.getResponseCode();
+
+        String x = "subhashsurendran";
+        x.substring(2,4);
 
         InputStream inputStream = (status < 200 || status > 299) ? httpURLConnection.getErrorStream() : httpURLConnection.getInputStream();
 

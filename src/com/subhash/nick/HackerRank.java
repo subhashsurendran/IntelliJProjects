@@ -1,7 +1,9 @@
 package com.subhash.nick;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class HackerRank {
 
@@ -15,12 +17,17 @@ public class HackerRank {
 
 
 
-        System.out.println("Completed");
+      //  System.out.println("Completed");
 
                    for(int i =0;i<xx.length;i++){
 
-                       System.out.println(Arrays.toString(xx[i]));
+                       //System.out.println(Arrays.toString(xx[i]));
                    }
+
+                   List<Float> xyz = new ArrayList<>();
+                   xyz.add(new Float(1.01));
+                   xyz.add(new Float(1.99));
+                   efficientJanitor(xyz);
     }
 
 
@@ -92,5 +99,19 @@ public class HackerRank {
         }
 
         return arrayTobeRotated;
+    }
+
+
+    public static void efficientJanitor(List<Float>weight){
+
+        int weightListSize = weight.size();
+        Float[] weightArray = new Float[weightListSize];
+        weight.toArray(weightArray);
+        System.out.println(weightArray.toString());
+
+
+        List<Integer> num = new ArrayList<>();
+
+        num.toArray();
     }
 }

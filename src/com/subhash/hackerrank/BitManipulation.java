@@ -1,13 +1,39 @@
 package com.subhash.hackerrank;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class BitManipulation {
 
     public static void main(String[] args) {
-        long l = minOperations(50000);
-        System.out.println(l);
+        //long l = minOperations(8);
+        //System.out.println(l);
+
+        String a = "al"+"ice";
+        String b ="ali"+"ce";
+     //   System.out.println(a==b);
+
+      //  BigInteger x =  BigInteger.valueOf(Integer.MAX_VALUE);
+      //  System.out.println(x.bitCount());
+      //  System.out.println(x);
+      //  Integer y = Integer.MAX_VALUE;
+      //  System.out.println(y);
+        //System.out.println();
+
+
+        ArrayList<Integer> numbersList
+                = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8));
+
+        Map<Integer, Long> elementCountMap = numbersList.stream()
+                //.collect(Collectors.toMap(Function.identity(), v -> 1L, Long::sum));
+        .collect(Collectors.toMap(Function.identity(), v->1L, Long::sum));
+
+        System.out.println(Function.identity());
+        System.out.println(elementCountMap);
     }
 
 

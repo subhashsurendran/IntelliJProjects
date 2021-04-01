@@ -22,8 +22,6 @@ public class RotateArray {
                 temp = nums[j];
                 nums[j]=previous;
                 previous = temp;
-
-
             }
         }
 
@@ -34,7 +32,7 @@ public class RotateArray {
         int []a = new int [nums.length];
 
         for(int i =0;i< nums.length;i++){
-            a[(i+k)%nums.length]= nums[i];
+
         }
         for(int i =0;i<a.length;i++){
             nums[i]=a[i];

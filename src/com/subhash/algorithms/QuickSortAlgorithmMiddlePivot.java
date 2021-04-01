@@ -41,7 +41,7 @@ public class QuickSortAlgorithmMiddlePivot {
         if(low<j){
                 quickSort(arr, low, j );
         }
-        if(high > i){
+        if(high>i){
             quickSort(arr, i, high);
         }
 

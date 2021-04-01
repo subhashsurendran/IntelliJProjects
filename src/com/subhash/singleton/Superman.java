@@ -34,8 +34,8 @@ class x {
         Class<Superman> supermanClass = Superman.class;
         final Constructor<?>[] declaredConstructors = supermanClass.getDeclaredConstructors();
 
-        SupermanEnum instance = SupermanEnum.INSTANCE;
-        instance.fly();
+
+
     }
 
 }

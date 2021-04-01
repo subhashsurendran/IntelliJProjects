@@ -1,8 +1,8 @@
 package com.subhash.blackhawk.pot;
 
-public class Node {
+class Node {
 
-    Node left;
+     Node left;
     Node right;
     int data;
 
