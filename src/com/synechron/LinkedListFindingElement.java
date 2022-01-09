@@ -61,7 +61,28 @@ public class LinkedListFindingElement {
         node = prev;
         return node;
     }
+
+    Node reverse(Node node){
+
+        Node previousNode = null;
+        Node currentNode = node;
+        Node nextNode = null;
+
+        while(currentNode!=null){
+
+            nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        return previousNode;
+    }
+
+
 }
+
+
+
 
 class Node{
 

@@ -1,8 +1,6 @@
 package com.subhash.algoexpert;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class TwoNumberSum {
 
@@ -62,7 +60,7 @@ public class TwoNumberSum {
     private int[] returnIntArrayThirdSolution(int[] input, int targetSUm){
 
         Arrays.sort(input);
-
+        Map<Integer, String> mapOb = new HashMap<>();
         int left = 0;
         int right = input.length-1;
         while(left<right){

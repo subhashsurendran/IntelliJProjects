@@ -34,12 +34,6 @@ public class PriorityQueueWithSinglyLinkedListTry {
 
 
 
-
-
-
-
-
-
     static class NodeLinkedListTry {
 
         NodeLinkedListTry next;

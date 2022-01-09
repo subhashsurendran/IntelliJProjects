@@ -26,6 +26,8 @@ public class MaxProfitCalculator {
         System.out.println("Practice Hard "+ maxProfitHardP1(inputArr));
         System.out.println("Practice Hard 2 "+ practiceHard2KTransactions(2, inputArr));
 
+
+
     }
 
     private static int maximizeProfit(int[] prices) { int n = prices.length;

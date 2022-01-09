@@ -6,7 +6,8 @@ import java.util.List;
 
 /*
 
-You borrowed N dollars from the bank. The compound interest accrues I % each month. You will pay the interest in M months. Then how many $s you have to pay to the bank after M months?
+You borrowed N dollars from the bank. The compound interest accrues I % each month.
+You will pay the interest in M months. Then how many $s you have to pay to the bank after M months?
 The result will be always an integer.
  */
 public class InterestCalculator {
